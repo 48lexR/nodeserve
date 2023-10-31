@@ -17,7 +17,7 @@ const sendMail = (user, name, pass, callback) => {
     from: `"UNCCH Spoons", "uncchspoons@gmail.com"`,
     to: `<${user}>`,
     subject: "Cheese?",
-    html: `Hi there, ${name}
+    html: `Hi there, ${name}.
       Your password is ${pass} for uncchspoons.net.
       
       All the best,

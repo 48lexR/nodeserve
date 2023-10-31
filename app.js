@@ -47,7 +47,7 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(PORT, (error) => {
-  if (!error) console.log("App listening on port" + PORT);
+  if (!error) console.log("App listening on port " + PORT);
   else console.log("Cannot listen.");
 });
 
