@@ -17,11 +17,11 @@ const sendMail = (user, name, pass, callback) => {
     from: `"UNCCH Spoons", "uncchspoons@gmail.com"`,
     to: `<${user}>`,
     subject: "Cheese?",
-    html: `Hi there, ${name}.
-      Your password is ${pass} for uncchspoons.net.
-      
-      All the best,
-      Cage Bullard,
+    html: `Hi there, ${name}.\n
+      Your password is ${pass} for uncchspoons.net.\n
+      \n
+      All the best,\n
+      Cage Bullard,\n
       DO NOT REPLY TO THIS EMAIL ACCOUNT: Please email cbull358@gmail.com`,
   };
   transporter.sendMail(mailOptions, callback);
@@ -33,7 +33,7 @@ router.get("/", (req, res) => {
   res.status(400);
 });
 
-router.post("/", bodyParser.json(), async (req, res) => {
+router.post("/", bodyParser.json(), (req, res) => {
   let user = req.body;
   sendMail(user.uname, user.name, user.pword, (err, info) => {
     if (err) {
