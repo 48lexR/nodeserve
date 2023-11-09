@@ -38,10 +38,10 @@ router.post("/", bodyParser.json(), (req, res) => {
   sendMail(user.uname, user.name, user.pword, (err, info) => {
     if (err) {
       console.log(err);
-      res.status(400).send("There was an error sending the email.");
+      res.status(400).send({ title: "There was an error sending the email." });
     } else {
       console.log(info);
-      res.status(200).send("Success in sending email.");
+      res.status(200).send({ title: "Success in sending email." });
     }
   });
 });
