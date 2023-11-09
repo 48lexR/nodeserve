@@ -41,7 +41,6 @@ router.post("/", bodyParser.json(), async (req, res) => {
       res.status(400);
     } else {
       console.log(info);
-      res.send("SNAFU\n");
       res.status(200);
     }
   });
